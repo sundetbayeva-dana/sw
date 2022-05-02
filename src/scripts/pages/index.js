@@ -13,21 +13,11 @@ const cardSection ='.card-section'
 const api = new Api({
   url: 'https://swapi.dev/api'
 })
-let qwe;
-let qweqwe;
 
-const addCards = (resp) => {
-  const card = new Card(resp,{
-    
-    cardSelector: '.card-template', 
-  })
-
-  qwe = card.generateCard(); 
-  // qweqwe = card.removeCard()
-  // const cardElement = card.generateCard(); 
-  // cardList.addItem(cardElement); 
-}
-
+// const card = new Card({
+  
+//   cardSelector: '.card-template', 
+// })
 
 
 const form = new SubmitForm({
@@ -36,12 +26,32 @@ const form = new SubmitForm({
     console.log(formData)
     console.log(+formData.character)
 
+
     api.getCharacter(+formData.character)
-    .then(res => {
-      console.log(res)
-      addCards(res)
-      cardList.setItem(qwe);
+    .then(CharacterData => {
+      api.getPlanet(CharacterData.homeworld)
+      .then((planetData) => {
+        const isCardExist = document.querySelector('.card')
+        const card = new Card({CharacterData, planetData}, {  
+          cardSelector: '.card-template', 
+        })
+
+        if (!isCardExist) {
+
+          const cardElement = card.generateCard(CharacterData)
+          cardList.setItem(cardElement)
+                 
+        } else {
+          card.setValueOnElement(CharacterData)
+        }
+
+      }) 
+      
+      
+      
+
     })
+    
     
 
   }
@@ -58,3 +68,4 @@ const formRenderer = new Section({
 const formElement = form.generate();
 
 formRenderer.setItem(formElement);
+

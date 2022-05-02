@@ -12,7 +12,7 @@ class Api {
 
   getCharacter(id) {
     return fetch(`${this.url}/people/${id}`, {
-      method: 'GET',  
+      method: 'GET',
     })
     .then(this._handleResponse)
     .catch((err) => {
@@ -20,8 +20,15 @@ class Api {
     })
   }
 
-  getPlanet(id) {
-    return  
+  getPlanet(url) {
+    console.log(url)
+    return fetch(url, {
+      method: 'GET',
+    })
+    .then(this._handleResponse)
+    .catch((err) => {
+      console.log(err)
+    })
   }
   
 }
