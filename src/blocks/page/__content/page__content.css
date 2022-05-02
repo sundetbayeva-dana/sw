@@ -1,0 +1,7 @@
+.page__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(240, 245, 247, 1);
+  min-height: 672px;
+}

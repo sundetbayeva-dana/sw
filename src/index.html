@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>star wars</title>
+</head>
+<body class="page">
+  <header class="header">
+    <div class="header__container">
+      <a href="https://starwars.ru/" class="link">
+        <img src="<%=require('./images/icon.svg')%>" alt="Логотип" class="header__icon">
+      </a>      
+      <a href="https://swapi.dev/" class="link header__link-api">API документация</a>
+    </div>  
+  </header>
+  <main class="page__content">
+    <section class="form-section"></section>
+    <section class="card-section"></section>
+    <template class="form-template">
+      <form class="form">
+        <input type="text" placeholder="Введите номер персонажа" name="character" class="form__input">
+        <button class="form__button">Поиск</button>
+      </form>
+    </template>
+
+    <template class="card-template">
+      <div class="card">
+        <h2 class="card__title name-value"></h2>
+        <div class="card__characteristic-container">
+          <p class="card__characteristic">Пол</p>
+          <p class="card__characteristic-value sex-value">male</p>
+        </div>
+        <div class="card__characteristic-container">
+          <p class="card__characteristic">Рост</p>
+          <p class="card__characteristic-value height-calue">172 см</p>
+        </div>
+        <div class="card__characteristic-container">
+          <p class="card__characteristic">Вес</p>
+          <p class="card__characteristic-value weight-value"></p>
+        </div>
+        <div class="card__characteristic-container">
+          <p class="card__characteristic">Родная планета</p>
+          <p class="card__characteristic-value home-value"></p>
+        </div>
+        <div class="card__characteristic-container">
+          <p class="card__characteristic">Цвет глаз</p>
+          <p class="card__characteristic-value eyes-value"></p>
+        </div>
+  
+      </div>
+
+    </template>
+    
+    
+  </main>
+
+  <footer class="footer">
+  </footer>
+
+</body>
+</html>

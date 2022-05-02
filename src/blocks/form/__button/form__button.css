@@ -1,0 +1,17 @@
+.form__button {
+  width: 160px;
+  height: 50px;
+  background-color: rgba(255, 232, 31, 1);
+  border: none;
+  padding: 0;
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 19px;
+  color: rgba(15, 15, 3, 1);
+}
+
+.form__button:hover {
+  opacity: .7;
+  cursor: pointer;
+}

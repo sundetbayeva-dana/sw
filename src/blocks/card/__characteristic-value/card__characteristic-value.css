@@ -1,0 +1,8 @@
+.card__characteristic-value {
+  margin: 0;
+  color: rgba(15, 15, 3, 1);
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 19px;
+}

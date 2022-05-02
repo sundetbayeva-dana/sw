@@ -1,0 +1,9 @@
+.header__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - 2*136px);
+  margin: 0 auto;
+  min-height: 120px;
+}
