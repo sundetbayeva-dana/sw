@@ -10,16 +10,16 @@ const api = new Api({
 
 const errorText = document.querySelector('.character-error')
 
-const card = new Card({  
-  cardSelector: '.card-template', 
-})
+// const card = new Card({  
+//   cardSelector: '.card-template', 
+// })
 
 const form = new SubmitForm({
   selector: '.form-section',
   handleFormSubmit: (formData) => {
 
     const cardElement = document.querySelector('.card')
-    if (+formData.character <= 0 || +formData.character > 83) {      
+    if ((+formData.character <= 0 || +formData.character > 83) || !Number.isInteger(+formData.character)) {      
 
       errorText.classList.add('element_visible')
       errorText.textContent = 'Введите число от 1 до 83'
@@ -33,9 +33,12 @@ const form = new SubmitForm({
       api.getCharacter(formData.character)
       .then(characterData => {
         api.getPlanet(characterData.homeworld)
-        .then((planetData) => {          
+        .then((planetData) => {
+          const card = new Card({  
+            cardSelector: '.card-template', 
+          })       
           if (!cardElement) {
-              
+            
             const cardItem = card.generateCard({characterData, planetData})
             cardList.setItem(cardItem)
             
@@ -45,9 +48,15 @@ const form = new SubmitForm({
           }
   
         })
+        .catch((err) => {
+          errorText.classList.add('element_visible')
+          errorText.textContent = 'Произошла ошибка. Попробуйте позже:)'
+          console.log(err)
+        })
   
       })
       .catch((err) => {
+        errorText.classList.add('element_visible')
         errorText.textContent = 'Произошла ошибка. Попробуйте позже:)'
         console.log(err)
       })
@@ -58,4 +67,3 @@ const form = new SubmitForm({
 form.setEventListeners()
 
 const cardList = new Section('.card-section');
-

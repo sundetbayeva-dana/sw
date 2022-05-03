@@ -4,3 +4,9 @@
   display: flex;
   flex-direction: column;
 }
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .footer-container {
+    width: calc(100% - 2*50px);
+  }
+}

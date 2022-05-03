@@ -9,4 +9,7 @@
   font-family: 'Montserrat Semibold', 'Helvetica', sans-serif;
   font-size: 30px;
   line-height: 37px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
