@@ -12,4 +12,13 @@
   font-style: normal;
   src: url("./montserrat-regular.woff2") format("woff2"),
        url("./montserrat-regular.woff") format("woff");
-  }
+}
+
+@font-face {
+  font-family: 'Gothic';
+  font-weight: normal;
+  font-style: normal;
+  src: url("./GothicA1-Regular.woff2") format("woff2"),
+       url("./GothicA1-Regular.woff") format("woff");
+}
+

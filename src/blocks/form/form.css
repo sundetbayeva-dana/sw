@@ -2,9 +2,29 @@
   width: calc(100% - 2*421px);
   margin: 110px auto 0;
   display: flex;
-  flex-direction: row;
-  filter: drop-shadow(3px 11px 13px rgba(47, 49, 48, 0.08));
-  border-radius: 12px;
-  overflow: hidden;
-  box-sizing: border-box
+  flex-direction: column;
+}
+
+@media screen and (min-width: 1001px) and (max-width: 1280px) {
+  .form {
+    width: calc(100% - 2*300px)
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1000px) {
+  .form {
+    width: calc(100% - 2*180px)
+  }
+}
+
+@media screen and (min-width: 401px) and (max-width: 768px) {
+  .form {
+    width: calc(100% - 2*80px)
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 400px) {
+  .form {
+    width: calc(100% - 15px)
+  }
 }

@@ -4,68 +4,58 @@ import SubmitForm from '../components/SubmitForm';
 import Card from '../components/Card'
 import Section from '../components/Section';
 
-// let formRenderer = null;
-const formSection = '.form-section'
-const cardSection ='.card-section'
-
-// const cardList = null
-
 const api = new Api({
   url: 'https://swapi.dev/api'
 })
 
-// const card = new Card({
-  
-//   cardSelector: '.card-template', 
-// })
+const errorText = document.querySelector('.character-error')
 
+const card = new Card({  
+  cardSelector: '.card-template', 
+})
 
 const form = new SubmitForm({
-  selector: '.form-template',
+  selector: '.form-section',
   handleFormSubmit: (formData) => {
-    console.log(formData)
-    console.log(+formData.character)
 
+    const cardElement = document.querySelector('.card')
+    if (+formData.character <= 0 || +formData.character > 83) {      
 
-    api.getCharacter(+formData.character)
-    .then(CharacterData => {
-      api.getPlanet(CharacterData.homeworld)
-      .then((planetData) => {
-        const isCardExist = document.querySelector('.card')
-        const card = new Card({CharacterData, planetData}, {  
-          cardSelector: '.card-template', 
+      errorText.classList.add('element_visible')
+      errorText.textContent = 'Введите число от 1 до 83'
+      if (cardElement) {
+        cardElement.classList.add('element_invisible')
+      }
+      
+    } else {
+      errorText.classList.remove('element_visible')
+      
+      api.getCharacter(formData.character)
+      .then(characterData => {
+        api.getPlanet(characterData.homeworld)
+        .then((planetData) => {          
+          if (!cardElement) {
+              
+            const cardItem = card.generateCard({characterData, planetData})
+            cardList.setItem(cardItem)
+            
+          } else {
+            cardElement.classList.remove('element_invisible')
+            card.setValueOnElement({characterData, planetData})
+          }
+  
         })
-
-        if (!isCardExist) {
-
-          const cardElement = card.generateCard(CharacterData)
-          cardList.setItem(cardElement)
-                 
-        } else {
-          card.setValueOnElement(CharacterData)
-        }
-
-      }) 
-      
-      
-      
-
-    })
+  
+      })
+      .catch((err) => {
+        errorText.textContent = 'Произошла ошибка. Попробуйте позже:)'
+        console.log(err)
+      })
+    }
     
-    
-
   }
 });
+form.setEventListeners()
 
-const cardList = new Section({
-	data: []
-}, cardSection);
-
-const formRenderer = new Section({
-	data: []
-}, formSection);
-
-const formElement = form.generate();
-
-formRenderer.setItem(formElement);
+const cardList = new Section('.card-section');
 

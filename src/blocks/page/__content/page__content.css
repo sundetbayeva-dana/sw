@@ -2,6 +2,26 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(240, 245, 247, 1);
   min-height: 672px;
+  background: rgba(240, 245, 247, 1)  url(./../../../images/pngwing1.png) bottom right 215px no-repeat;
+}
+
+@media screen and (min-width: 1151px) and (max-width: 1280px) {
+  .page__content {
+    background: rgba(240, 245, 247, 1)  url(./../../../images/pngwing1.png) bottom right 100px no-repeat;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1150px) {
+  .page__content {
+    background: rgba(240, 245, 247, 1)  url(./../../../images/pngwing1.png) bottom right -100px no-repeat;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .page__content {
+    background: rgba(240, 245, 247, 1)  url(./../../../images/pngwing1.png) bottom -30px right -150px no-repeat;
+    min-height: 800px;
+  }
+  
 }

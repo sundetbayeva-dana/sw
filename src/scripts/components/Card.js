@@ -1,9 +1,6 @@
 class Card {
-  constructor(data, { cardSelector }) {
-    console.log(data)
+  constructor({ cardSelector }) {
     this._cardSelector = cardSelector;
-    this._characterData = data.CharacterData
-    this._planetData = data.planetData
   }
 
   _getTemplate() {
@@ -16,35 +13,30 @@ class Card {
     return cardElement;
   }
 
-  setTextValue(data) {
-    if (!data) {
-      data = this._characterData
-    }
-    this._characterData = data
+  _setTextValue(data) {
+
+    this._characterData = data.characterData
+    this._planetData = data.planetData
     this._element.querySelector('.name-value').textContent = this._characterData.name
     this._element.querySelector('.sex-value').textContent = this._characterData.gender
-    this._element.querySelector('.height-value').textContent = this._characterData.height
-    this._element.querySelector('.weight-value').textContent = this._characterData.mass
+    this._element.querySelector('.height-value').textContent = `${this._characterData.height} см`
+    this._element.querySelector('.weight-value').textContent = `${this._characterData.mass} кг`
     this._element.querySelector('.home-value').textContent = this._planetData.name
     this._element.querySelector('.eyes-value').style.backgroundColor = this._characterData.eye_color
 
   }
 
-
-
-  generateCard() {
-
+  generateCard(data) {
     this._element = this._getTemplate();
-    this.setTextValue()
+    this._setTextValue(data)
     return this._element;
   }
 
   setValueOnElement(data) {
     this._element = this._getElement();
-    this.setTextValue(data)
+    this._setTextValue(data)
     return this._element;
   }
-
 }
 
 export default Card;

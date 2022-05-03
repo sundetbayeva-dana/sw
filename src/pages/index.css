@@ -8,6 +8,7 @@
 @import url(./../blocks/header/__icon/header__icon.css);
 @import url(./../blocks/page/__content/page__content.css);
 @import url(./../blocks/form/form.css);
+@import url(./../blocks/form-container/form-container.css);
 @import url(./../blocks/form/__input/form__input.css);
 @import url(./../blocks/form/__button/form__button.css);
 @import url(./../blocks/card/card.css);
@@ -16,5 +17,13 @@
 @import url(./../blocks/card/__characteristic-container/card__characteristic-container.css);
 @import url(./../blocks/card/__characteristic-value/card__characteristic-value.css);
 @import url(./../blocks/footer/footer.css);
+@import url(./../blocks/footer-container/footer-container.css);
+@import url(./../blocks/footer/__link/footer__link.css);
+@import url(./../blocks/footer/__links/footer__links.css);
+@import url(./../blocks/footer/__copyright/footer__copyright.css);
+@import url(./../blocks/footer/__icon/footer__icon.css);
 @import url(./../blocks/form-section/form-section.css);
 @import url(./../blocks/eyes-value/eyes-value.css);
+@import url(./../blocks/error/error.css);
+@import url(./../blocks/element/_visible/element_visible.css);
+@import url(./../blocks/element/_invisible/element_invisible.css);

@@ -1,4 +1,10 @@
 .footer {
-  height: 232px;
+  min-height: 232px;
   background-color: rgba(15, 15, 3, 1);
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .footer {
+    min-height: 100px;
+  }
 }

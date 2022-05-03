@@ -16,14 +16,18 @@
     </div>  
   </header>
   <main class="page__content">
-    <section class="form-section"></section>
-    <section class="card-section"></section>
-    <template class="form-template">
-      <form class="form">
-        <input type="text" placeholder="Введите номер персонажа" name="character" class="form__input" required>
-        <button class="form__button">Поиск</button>
+    <section class="form-section">
+      <form class="form" novalidate>
+        <div class="form-container">
+          <input placeholder="Введите номер персонажа"
+          name="character" id="character" class="form__input" type="number" min="1" max="83" required>
+          <button class="form__button">Поиск</button>  
+        </div>        
+        <span class="character-error error"></span>      
+              
       </form>
-    </template>
+    </section>
+    <section class="card-section"></section>
 
     <template class="card-template">
       <div class="card">
@@ -57,7 +61,19 @@
   </main>
 
   <footer class="footer">
+    <div class="footer-container">
+      <ul class="footer__links">
+        <li>
+          <a class="footer__link">
+            <img src="<%=require('./images/Vector.svg')%>" alt="Логотип" class="footer__icon">
+            GitHub
+          </a>
+        </li>
+      </ul>
+      <p class="footer__copyright">© Илон Маск</p>
+    </div>
+    
   </footer>
-
+<!-- <script type="module" src="./scripts/pages/index.js"></script> -->
 </body>
 </html>

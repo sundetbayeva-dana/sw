@@ -1,0 +1,9 @@
+.error {
+  color: rgba(254, 78, 78, 1);
+  display: none;
+  font-family: 'Gothic','Helvetica', sans-serif;
+  font-style: normal;
+  font-size: 13px;
+  line-height: 20px;
+  margin-top: 9px;
+}

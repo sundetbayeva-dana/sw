@@ -15,23 +15,14 @@ class Api {
       method: 'GET',
     })
     .then(this._handleResponse)
-    .catch((err) => {
-      console.log(err)
-    })
   }
 
   getPlanet(url) {
-    console.log(url)
     return fetch(url, {
       method: 'GET',
     })
     .then(this._handleResponse)
-    .catch((err) => {
-      console.log(err)
-    })
-  }
-  
+  }  
 }
-
 
 export default Api
