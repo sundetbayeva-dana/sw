@@ -12,16 +12,16 @@
 .form__input{border:none;box-sizing:border-box;color:#0f0f03;font-family:Roboto,Helvetica,sans-serif;font-size:16px;font-style:normal;height:50px;line-height:19px;padding:15px;width:calc(100% - 160px)}.form__input:focus{border-bottom-left-radius:12px;border-top-left-radius:12px}@media screen and (min-width:401px) and (max-width:1280px){.form__input{width:calc(100% - 110px)}}@media screen and (min-width:320px) and (max-width:400px){.form__input{width:calc(100% - 90px)}}
 .form__button{background-color:#ffe81f;border:none;color:#0f0f03;font-family:Roboto,Helvetica,sans-serif;font-size:16px;font-style:normal;height:50px;line-height:19px;padding:0;width:160px}.form__button:hover{cursor:pointer;opacity:.7}@media screen and (min-width:401px) and (max-width:1280px){.form__button{width:110px}}@media screen and (min-width:320px) and (max-width:400px){.form__button{width:90px}}
 .card{background-color:#fff;border:none;border-radius:13px;box-sizing:border-box;filter:drop-shadow(3px 11px 13px rgba(47,49,48,.08));height:282px;margin:50px 0 0;overflow:hidden;width:392px}@media screen and (min-width:320px) and (max-width:768px){.card{width:292px}}
-.card__title{background-color:#2f3130;box-sizing:border-box;color:#fff;font-family:Montserrat Semibold,Helvetica,sans-serif;font-size:30px;height:67px;line-height:37px;margin:0;padding:15px 30px;width:100%}
+.card__title{background-color:#2f3130;box-sizing:border-box;color:#fff;font-family:Montserrat Semibold,Helvetica,sans-serif;font-size:30px;height:67px;line-height:37px;margin:0;overflow:hidden;padding:15px 30px;text-overflow:ellipsis;white-space:nowrap;width:100%}
 .card__characteristic{color:#0f0f03;font-family:Roboto,Helvetica,sans-serif;font-size:16px;font-style:normal;line-height:19px;margin:0 0 0 30px;width:194px}@media screen and (min-width:320px) and (max-width:768px){.card__characteristic{width:150px}}
 .card__characteristic-container{display:flex;flex-direction:row;margin-top:15px}.card__characteristic-container:first-of-type{margin-top:20px}
 .card__characteristic-value{color:#0f0f03;font-family:Roboto,Helvetica,sans-serif;font-size:16px;font-style:normal;line-height:19px;margin:0}
 .footer{background-color:#0f0f03;min-height:232px}@media screen and (min-width:320px) and (max-width:768px){.footer{min-height:100px}}
-.footer-container{display:flex;flex-direction:column;margin:0 auto;width:calc(100% - 224px)}
-.footer__link{align-items:center;color:#fff;display:flex;flex-direction:row;font-family:Roboto,Helvetica,sans-serif;font-size:16px;font-style:normal;height:35px;line-height:19px}
+.footer-container{display:flex;flex-direction:column;margin:0 auto;width:calc(100% - 224px)}@media screen and (min-width:320px) and (max-width:480px){.footer-container{width:calc(100% - 100px)}}
+.footer__link{align-items:center;color:#fff;display:flex;flex-direction:row;font-family:Roboto,Helvetica,sans-serif;font-size:16px;font-style:normal;height:35px;line-height:19px;text-decoration:none;width:120px}@media screen and (min-width:320px) and (max-width:768px){.footer__link{justify-content:center;margin:0 auto}}.footer__link:hover{cursor:pointer;opacity:.7}
 .footer__links{display:flex;flex-direction:column;margin:0;padding:30px 0 0}
-.footer__copyright{color:#fff;font-family:Roboto,Helvetica,sans-serif;font-size:15px;font-style:normal;line-height:17.58px;margin:0;padding-right:15px;padding-top:121px;text-align:right}@media screen and (min-width:320px) and (max-width:768px){.footer__copyright{padding-bottom:15px;padding-top:50px}}
-.footer__icon{padding:0 19px}
+.footer__copyright{color:#fff;font-family:Roboto,Helvetica,sans-serif;font-size:15px;font-style:normal;line-height:17.58px;margin:0;padding-right:15px;padding-top:121px;text-align:right}@media screen and (min-width:320px) and (max-width:768px){.footer__copyright{padding-bottom:15px;padding-right:0;padding-top:50px;text-align:center}}
+.footer__icon{padding:0 19px}@media screen and (min-width:320px) and (max-width:768px){.footer__icon{padding:0 19px 0 0}}
 .form-section{width:100%}
 .eyes-value{height:20px;width:20px}
 .error{color:#fe4e4e;display:none;font-family:Gothic,Helvetica,sans-serif;font-size:13px;font-style:normal;line-height:20px;margin-top:9px}
